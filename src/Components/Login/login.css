@@ -291,3 +291,10 @@
     }
     
   }
+  .ecom__login__error{
+    color: red;
+  }
+  .Toastify__toast-container {
+    z-index: 99999 !important;
+  }
+  
