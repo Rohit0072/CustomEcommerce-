@@ -1,9 +1,9 @@
-import { useAuth } from "../../context/AuthContext"; // Import AuthContext
+import { useAuth } from "../../context/AuthContext";
 import "./user-profile.css";
 import { Plus } from "lucide-react";
 
 const UserProfile = () => {
-  const { user, logout } = useAuth(); // Get user from AuthContext
+  const { user, logout } = useAuth();
 
   return (
     <div className="user-profile__container">

@@ -31,24 +31,21 @@ function ShoppingCartComponent() {
     },
   ]);
 
-  // State for payment method
+
   const [paymentMethod, setPaymentMethod] = useState("creditCard");
 
-  // State for credit card info
   const [cardInfo, setCardInfo] = useState({
     name: "John Carter",
     number: "**** **** **** 2123",
     cvv: "156",
   });
 
-  // Calculate subtotal
   const calculateSubtotal = () => {
     return cartItems
       .reduce((total, item) => total + item.price * item.quantity, 0)
       .toFixed(2);
   };
 
-  // Update quantity
   const updateQuantity = (id, newQuantity) => {
     if (newQuantity < 1) return;
     setCartItems(
@@ -58,24 +55,20 @@ function ShoppingCartComponent() {
     );
   };
 
-  // Remove item
   const removeItem = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  // Render component
   return React.createElement(
     "div",
     { className: "sc_shopping_cart_container" },
     React.createElement(
       "div",
       { className: "sc_shopping_cart_wrapper" },
-      // Left column - Shopping Cart
       React.createElement(
         "div",
         { className: "sc_cart_section" },
         React.createElement("h2", { className: "sc_section_title" }, "Shopping Cart."),
-        // Cart table
         React.createElement(
           "table",
           { className: "sc_cart_table" },
@@ -99,7 +92,6 @@ function ShoppingCartComponent() {
               React.createElement(
                 "tr",
                 { key: item.id, className: "sc_cart_item" },
-                // Product cell
                 React.createElement(
                   "td",
                   { className: "sc_product_cell" },
@@ -114,7 +106,6 @@ function ShoppingCartComponent() {
                     React.createElement("span", { className: "sc_product_name" }, item.name)
                   )
                 ),
-                // Size cell
                 React.createElement(
                   "td",
                   { className: "sc_size_cell" },
@@ -124,7 +115,7 @@ function ShoppingCartComponent() {
                     React.createElement("option", null, item.size)
                   )
                 ),
-                // Quantity cell
+        
                 React.createElement(
                   "td",
                   { className: "sc_quantity_cell" },
@@ -303,6 +294,9 @@ function ShoppingCartComponent() {
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
+        position: relative;
+        top : 2rem;
+        background-image: url(https://img.freepik.com/free-vector/retro-style-geometric-background-black-white_1048-15515.jpg?t=st=1743246228~exp=1743249828~hmac=3905cd0…&w=900);
       }
       
       .sc_shopping_cart_wrapper {
@@ -314,11 +308,16 @@ function ShoppingCartComponent() {
       .sc_cart_section {
         flex: 1;
         min-width: 300px;
+        padding: 2rem;
+        background-color: white;
       }
       
       .sc_payment_section {
         flex: 1;
         min-width: 300px;
+        padding: 2rem;
+        background-color: #f5f5f5b0;
+        backdrop-filter: blur(5.5px);
       }
       
       .sc_section_title {

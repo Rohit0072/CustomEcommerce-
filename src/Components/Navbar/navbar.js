@@ -37,7 +37,7 @@ function Navbar() {
             <header className="header-border">
                 <div className="header-container">
                     <Link to="/" className="header-logo">Exclusive</Link>
-                    <nav className="header-nav" style={{
+                    <nav className="header-nav nav_linkes" style={{
                         display: window.innerWidth >= 768 ? "flex" : isMenuOpen ? "flex" : "none",
                         position: window.innerWidth < 768 ? "absolute" : "static",
                         top: "60px",

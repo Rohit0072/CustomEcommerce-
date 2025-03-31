@@ -1,10 +1,9 @@
-// Wishlist Component using React.createElement instead of JSX
+
 import React from "react"
 import { ShoppingBag, Heart, Home, CreditCard, User, LogOut, ChevronLeft, ChevronRight, X } from "lucide-react"
 import "./wishlist-component-styles.css"
 
 function WishlistComponent() {
-  // Sample data for the wishlist items
   const wishlistItems = [
     {
       id: 1,
@@ -26,11 +25,9 @@ function WishlistComponent() {
     },
   ]
 
-  // Current page for pagination
   const currentPage = 3
   const totalPages = 20
 
-  // Create menu item with icon and text
   const createMenuItem = (icon, text, count, isActive = false) => {
     return React.createElement(
       "div",
@@ -64,7 +61,6 @@ function WishlistComponent() {
         className: "wishlist_component__item_row",
       },
       [
-        // Item column with image and details
         React.createElement(
           "td",
           { className: "wishlist_component__item_cell" },
@@ -137,7 +133,6 @@ function WishlistComponent() {
 
   // Main component structure
   return React.createElement("div", { className: "wishlist_component__container" }, [
-    // Sidebar
     
 
     // Main content

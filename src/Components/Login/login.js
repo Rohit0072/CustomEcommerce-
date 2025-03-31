@@ -6,15 +6,15 @@ import "./login.css";
 const API_BASE_URL = "https://backend-onef.onrender.com"; 
 
 export default function Login() {
-  const { login } = useAuth(); // Get login function from AuthContext
-  const navigate = useNavigate(); // Hook for navigation
+  const { login } = useAuth(); 
+  const navigate = useNavigate(); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [error, setError] = useState(null);
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevents form reload
+    e.preventDefault(); 
     setError(null);
 
     try {
@@ -33,9 +33,9 @@ export default function Login() {
         throw new Error(data.message || "Login failed");
       }
 
-      login(data.token); // Save token in AuthContext
-      localStorage.setItem("token", data.token); // Store token for persistence
-      navigate("/"); // Redirect user
+      login(data.token); 
+      localStorage.setItem("token", data.token);
+      navigate("/");
     } catch (err) {
       setError(err.message);
     }
@@ -95,7 +95,7 @@ export default function Login() {
               </button>
             </form>
           </div>
-          <Link to="/signin">Create an account</Link>
+          <Link to="/signin" class="signin_link">Create an account</Link>
         </div>
       </div>
     </div>

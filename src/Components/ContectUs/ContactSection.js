@@ -22,14 +22,10 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Add form submission logic here (Adding in backend part)
   }
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault()
-    console.log("Newsletter subscription:", formData.newsletter)
-    // Add your newsletter submission logic here
   }
 
   return (
@@ -61,7 +57,7 @@ const ContactSection = () => {
           </div>
           <div className="contact-section__info-content">
             <h3 className="contact-section__info-title">Phone</h3>
-            <p className="contact-section__info-text">+01 - 123 456 7890</p>
+            <p className="contact-section__info-text">+91 - 97725 68998</p>
           </div>
         </div>
 
@@ -71,7 +67,7 @@ const ContactSection = () => {
           </div>
           <div className="contact-section__info-content">
             <h3 className="contact-section__info-title">Email</h3>
-            <p className="contact-section__info-text">mail@example.com</p>
+            <p className="contact-section__info-text">rs3274357@example.com</p>
           </div>
         </div>
 
@@ -84,7 +80,7 @@ const ContactSection = () => {
             <a href="#" className="contact-section__social-link">
               <FaYoutube />
             </a>
-            <a href="#" className="contact-section__social-link">
+            <a href="https://github.com/Rohit0072" className="contact-section__social-link">
               <FaGithub />
             </a>
             <a href="#" className="contact-section__social-link">
@@ -138,6 +134,7 @@ const ContactSection = () => {
                 type="email"
                 id="email"
                 name="email"
+                placeholder="example@gmail.com"
                 className="contact-section__form-input"
                 value={formData.email}
                 onChange={handleChange}
@@ -153,6 +150,7 @@ const ContactSection = () => {
                 type="text"
                 id="subject"
                 name="subject"
+                placeholder="Subject"
                 className="contact-section__form-input"
                 value={formData.subject}
                 onChange={handleChange}
@@ -168,6 +166,7 @@ const ContactSection = () => {
                 id="message"
                 name="message"
                 className="contact-section__form-textarea"
+                placeholder="Write your message here..."
                 value={formData.message}
                 onChange={handleChange}
                 required

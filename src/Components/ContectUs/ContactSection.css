@@ -103,7 +103,7 @@
 }
 
 .contact-section__form-container {
-  background: white;
+  background: #fff9;
   padding: 40px;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -112,6 +112,7 @@
   margin: 40px 0;
   position: relative;
   z-index: 1;
+  backdrop-filter: blur(6.7px);
 }
 
 .contact-section__form-heading {
@@ -291,6 +292,9 @@
   .contact-section__form-row {
     flex-direction: column;
     gap: 20px;
+  }
+  .sc_product_name{
+    display : none;
   }
 
  

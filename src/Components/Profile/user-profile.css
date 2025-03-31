@@ -1,7 +1,7 @@
 /* Base container */
 .user-profile__container {
     --user-profile-primary-bg: #979797;
-    --user-profile-card-bg: #ffffff;
+    --user-profile-card-bg: #ffffff8f;
     --user-profile-text-color: #1a1a1a;
     --user-profile-placeholder-color: #888888;
     --user-profile-border-radius: 24px;
@@ -11,11 +11,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: var(--user-profile-primary-bg);
     padding: 20px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
+      background-image: url("https://img.freepik.com/free-vector/distressed-maze-texture_1409-9483.jpg?t=st=1743241059~exp=1743244659~hmac=b1d256c8f76df98ee97b7712190409da383edc93b75feb37739b81b26e532d5d&w=996");
+      position: relative;
+      top: 1rem;
   }
   
   /* Card styling */
@@ -29,6 +32,7 @@
     margin-bottom: 20px;
     position: relative;
     margin: 1rem;
+    backdrop-filter: blur(6.7px);
   }
   
   /* Header section */
@@ -68,7 +72,7 @@
   }
   
   .user-profile__label {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--user-profile-text-color);
     font-weight: 400;
   }
@@ -77,7 +81,7 @@
     font-size: 48px;
     font-weight: 700;
     margin: 0;
-    color: #6886df;
+    color: #232323;
     text-transform: uppercase;
   }
   

@@ -1,17 +1,42 @@
-import React, { useState } from "react";
-import "./productsSection.css";
+import React, { useState, useEffect } from "react";
+import { FaHeart, FaEye, FaStar } from "react-icons/fa"; // Importing icons
+import "./fashion.css";
 
 function FashionPage() {
-  const itemsPerPage = 40; // 10 rows * 4 columns
+  const itemsPerPage = 40;
   const [currentPage, setCurrentPage] = useState(1);
+  const [fashionProducts, setFashionProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const fashionProducts = Array.from({ length: 200 }, (_, index) => ({
-    title: `Fashion Item ${index + 1}`,
-    price: Math.floor(Math.random() * 500) + 50,
-    rating: Math.floor(Math.random() * 5) + 1, 
-    reviews: Math.floor(Math.random() * 200) + 10,
-    image: `https://placehold.co/150x150?text=Fashion+${index + 1}`,
-  }));
+  useEffect(() => {
+    const fetchFashionProducts = async () => {
+      try {
+        const response = await fetch("https://backend-onef.onrender.com/api/products");
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const data = await response.json();
+
+        // Ensure filtering is case insensitive
+        const filteredFashionProducts = data.filter(
+          (product) => product.category?.toLowerCase() === "fashion"
+        );
+
+        setFashionProducts(filteredFashionProducts);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFashionProducts();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (fashionProducts.length === 0) return <p>No fashion products found.</p>;
 
   const totalPages = Math.ceil(fashionProducts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -34,19 +59,19 @@ function FashionPage() {
             <div className="products-section-product-img-container">
               <img
                 src={product.image}
-                alt={product.title}
+                alt={product.name}
                 className="products-section-product-img"
               />
               <div className="products-section-product-actions">
                 <button className="products-section-action-btn">
-                  <i className="far fa-heart"></i>
+                  <FaHeart />
                 </button>
                 <button className="products-section-action-btn">
-                  <i className="far fa-eye"></i>
+                  <FaEye />
                 </button>
               </div>
             </div>
-            <h3 className="products-section-product-title">{product.title}</h3>
+            <h3 className="products-section-product-title">{product.name}</h3>
             <div className="products-section-product-price">
               <span>${product.price}</span>
             </div>
@@ -55,14 +80,14 @@ function FashionPage() {
                 {Array(5)
                   .fill()
                   .map((_, i) => (
-                    <i
+                    <FaStar
                       key={i}
-                      className={`fas fa-star ${
+                      className={
                         i < product.rating
                           ? "products-section-star-filled"
                           : "products-section-star-empty"
-                      }`}
-                    ></i>
+                      }
+                    />
                   ))}
               </div>
               <span className="products-section-review-count">
@@ -82,13 +107,11 @@ function FashionPage() {
         >
           &laquo; Prev
         </button>
-        
+
         {Array.from({ length: totalPages }, (_, i) => (
           <button
             key={i + 1}
-            className={`pagination-btn ${
-              currentPage === i + 1 ? "active" : ""
-            }`}
+            className={`pagination-btn ${currentPage === i + 1 ? "active" : ""}`}
             onClick={() => setCurrentPage(i + 1)}
           >
             {i + 1}
@@ -110,3 +133,4 @@ function FashionPage() {
 }
 
 export default FashionPage;
+// 

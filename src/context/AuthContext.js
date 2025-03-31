@@ -7,7 +7,6 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   const login = (userToken) => {
-    console.log("Login called, setting token:", userToken);
     setToken(userToken);
     localStorage.setItem("token", userToken);
   };
@@ -27,10 +26,7 @@ export function AuthProvider({ children }) {
     }
   };
 
-  // Fetch user data when token is set
   useEffect(() => {
-    console.log("AuthContext useEffect triggered, Token:", token);
-
     const fetchUser = async () => {
       if (!token) {
         console.warn("No token found, skipping fetchUser");
@@ -38,18 +34,17 @@ export function AuthProvider({ children }) {
       }
 
       try {
-        console.log("Fetching user data with token:", token);
+        
         const response = await fetch("https://backend-onef.onrender.com/api/user/profile", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`, // Ensure the token is sent
+            Authorization: `Bearer ${token}`, 
           },
-          credentials: "include", // Important if using HTTP-only cookies
+          credentials: "include",
         });
 
         const data = await response.json();
-        console.log("Fetched user data:", data);
 
         if (response.ok && data.success && data.user) {
           setUser(data.user);
@@ -57,10 +52,9 @@ export function AuthProvider({ children }) {
           console.error("Failed to fetch user data:", data.message);
           setUser(null);
         }
-        // conosole test case
+        
         if (response.ok && data.success && data.user) {
           setUser(data.user);
-          console.log("User state updated:", data.user); // ✅ Add this
         }
         
       } catch (error) {

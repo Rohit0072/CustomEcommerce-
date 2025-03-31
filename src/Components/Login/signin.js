@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { ArrowUpRight, Lock, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify"; // ✅ Import Toast
-import "react-toastify/dist/ReactToastify.css"; // ✅ Import CSS
+import { toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
 
 const API_BASE_URL = "https://backend-onef.onrender.com"; 
@@ -16,7 +16,6 @@ export default function Signin() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate(); 
 
-  // ✅ Initialize Toast Notifications
   const showToast = (message, type = "success") => {
     toast[type](message, {
       position: "top-right",

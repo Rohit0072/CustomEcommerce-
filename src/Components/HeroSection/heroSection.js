@@ -65,7 +65,7 @@ function HeroSection() {
                         {/* <!-- Product 1 --> */}
                         <div className="product-card">
                             <div className="product-image-container">
-                                <img src="https://placehold.co/150x150" alt="Product" className="product-image" />
+                                <img src="https://unstd.in/cdn/shop/files/SAGE-GREEN-2.jpg?v=1734507963&width=800" alt="Product" className="product-image" />
                                 <div className="product-wishlist">
                                     <i className="far fa-heart"></i>
                                 </div>
@@ -92,7 +92,7 @@ function HeroSection() {
                         {/* <!-- Product 2 --> */}
                         <div className="product-card">
                             <div className="product-image-container">
-                                <img src="https://placehold.co/150x150" alt="Product" className="product-image" />
+                                <img src="https://shopatsc.com/cdn/shop/products/CH520_1000x1000_Black_G.jpg?v=1681194265" alt="Product" className="product-image" />
                                 <div className="product-wishlist">
                                     <i className="far fa-heart"></i>
                                 </div>
@@ -119,7 +119,7 @@ function HeroSection() {
                         {/* <!-- Product 3 --> */}
                         <div className="product-card">
                             <div className="product-image-container">
-                                <img src="https://placehold.co/150x150" alt="Product" className="product-image" />
+                                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MC7K4ref_FV99_VW_34FR+watch-case-46-titanium-gold-cell-s10_VW_34FR+watch-face-46-titanium-gold-s10_VW_34FR?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1725645630838" alt="Product" className="product-image" />
                                 <div className="product-wishlist">
                                     <i className="far fa-heart"></i>
                                 </div>
@@ -146,7 +146,7 @@ function HeroSection() {
                         {/* <!-- Product 4 --> */}
                         <div className="product-card">
                             <div className="product-image-container">
-                                <img src="https://placehold.co/150x150" alt="Product" className="product-image" />
+                                <img src="https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lock---go---M22311_PM2_Front%20view.png?wid=730&hei=730" alt="Product" className="product-image" />
                                 <div className="product-wishlist">
                                     <i className="far fa-heart"></i>
                                 </div>

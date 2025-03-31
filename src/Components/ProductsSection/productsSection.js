@@ -1,5 +1,6 @@
 import React from "react";
-import "./productsSection.css";
+import "./fashion.css";
+import { FaHeart, FaEye, FaStar } from "react-icons/fa";
 
 function ProductsSection() {
   return (
