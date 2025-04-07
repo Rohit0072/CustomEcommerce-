@@ -10,6 +10,7 @@ import Fashion from './Components/Pages/fashion'
 import Cart from './Components/Pages/cart'
 import WishList from './Components/Pages/wishlist'
 import Profile from './Components/Pages/profile'
+import ProductPage from './Components/Pages/productpage'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import ProtectedRoute from './Components/ProtectedRoute';
 import { useAuth } from './context/AuthContext';
@@ -28,6 +29,7 @@ function App() {
     { path: '/wishlist', element: <ProtectedRoute><WishList/></ProtectedRoute> },
     { path: '/cart', element: <ProtectedRoute><Cart/></ProtectedRoute> },
     { path: '/profile', element: <ProtectedRoute><Profile user={user} /></ProtectedRoute> },
+    { path: '/product/:id', element: <ProtectedRoute><ProductPage/></ProtectedRoute> },
     { path: '*', element: <Error/> }
   ]);
 

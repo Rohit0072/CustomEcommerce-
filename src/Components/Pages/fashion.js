@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Electronics from '../ProductsSection/electronics';
+import Fashion from '../ProductsSection/fashion'
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import { BlinkBlur } from 'react-loading-indicators';
@@ -8,7 +9,7 @@ function FashionPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 5800); // 5 seconds loading delay
+    setTimeout(() => setLoading(false), 5800);
   }, []);
 
   return (

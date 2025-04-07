@@ -62,114 +62,114 @@ function HeroSection() {
                         <a href="#" className="products-view-all">View All</a>
                     </div>
                     <div className="products-grid">
-                        {/* <!-- Product 1 --> */}
-                        <div className="product-card">
-                            <div className="product-image-container">
-                                <img src="https://unstd.in/cdn/shop/files/SAGE-GREEN-2.jpg?v=1734507963&width=800" alt="Product" className="product-image" />
-                                <div className="product-wishlist">
-                                    <i className="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div className="product-details">
-                                <h3 className="product-title">Premium T-Shirt</h3>
-                                <div className="product-price">
-                                    <span className="product-current-price">$45.00</span>
-                                    <span className="product-original-price">$60.00</span>
-                                </div>
-                                <div className="product-rating">
-                                    <div className="product-stars">
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span className="product-reviews">(45)</span>
-                                </div>
-                            </div>
-                        </div>
+  {/* <!-- Product 1 --> */}
+  <Link to="/product/67f2be87a5c5279344a1aa37" className="product-card">
+    <div className="product-image-container">
+      <img src="https://unstd.in/cdn/shop/files/SAGE-GREEN-2.jpg?v=1734507963&width=800" alt="Product" className="product-image" />
+      <div className="product-wishlist">
+        <i className="far fa-heart"></i>
+      </div>
+    </div>
+    <div className="product-details">
+      <h3 className="product-title">Premium T-Shirt</h3>
+      <div className="product-price">
+        <span className="product-current-price">$45.00</span>
+        <span className="product-original-price">$60.00</span>
+      </div>
+      <div className="product-rating">
+        <div className="product-stars">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star-half-alt"></i>
+        </div>
+        <span className="product-reviews">(45)</span>
+      </div>
+    </div>
+  </Link>
 
-                        {/* <!-- Product 2 --> */}
-                        <div className="product-card">
-                            <div className="product-image-container">
-                                <img src="https://shopatsc.com/cdn/shop/products/CH520_1000x1000_Black_G.jpg?v=1681194265" alt="Product" className="product-image" />
-                                <div className="product-wishlist">
-                                    <i className="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div className="product-details">
-                                <h3 className="product-title">Wireless Headphones</h3>
-                                <div className="product-price">
-                                    <span className="product-current-price">$120.00</span>
-                                    <span className="product-original-price">$150.00</span>
-                                </div>
-                                <div className="product-rating">
-                                    <div className="product-stars">
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="far fa-star"></i>
-                                    </div>
-                                    <span className="product-reviews">(32)</span>
-                                </div>
-                            </div>
-                        </div>
+  {/* <!-- Product 2 --> */}
+  <Link to="/product/67f3435b26934098929c7718" className="product-card">
+    <div className="product-image-container">
+      <img src="https://shopatsc.com/cdn/shop/products/CH520_1000x1000_Black_G.jpg?v=1681194265" alt="Product" className="product-image" />
+      <div className="product-wishlist">
+        <i className="far fa-heart"></i>
+      </div>
+    </div>
+    <div className="product-details">
+      <h3 className="product-title">Wireless Headphones</h3>
+      <div className="product-price">
+        <span className="product-current-price">$120.00</span>
+        <span className="product-original-price">$150.00</span>
+      </div>
+      <div className="product-rating">
+        <div className="product-stars">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="far fa-star"></i>
+        </div>
+        <span className="product-reviews">(32)</span>
+      </div>
+    </div>
+  </Link>
 
-                        {/* <!-- Product 3 --> */}
-                        <div className="product-card">
-                            <div className="product-image-container">
-                                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MC7K4ref_FV99_VW_34FR+watch-case-46-titanium-gold-cell-s10_VW_34FR+watch-face-46-titanium-gold-s10_VW_34FR?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1725645630838" alt="Product" className="product-image" />
-                                <div className="product-wishlist">
-                                    <i className="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div className="product-details">
-                                <h3 className="product-title">Smart Watch</h3>
-                                <div className="product-price">
-                                    <span className="product-current-price">$225.00</span>
-                                    <span className="product-original-price">$280.00</span>
-                                </div>
-                                <div className="product-rating">
-                                    <div className="product-stars">
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                    </div>
-                                    <span className="product-reviews">(59)</span>
-                                </div>
-                            </div>
-                        </div>
+  {/* <!-- Product 3 --> */}
+  <Link to="/product/67f3452b26934098929c771a" className="product-card">
+    <div className="product-image-container">
+      <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MC7K4ref_FV99_VW_34FR+watch-case-46-titanium-gold-cell-s10_VW_34FR+watch-face-46-titanium-gold-s10_VW_34FR?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1725645630838" alt="Product" className="product-image" />
+      <div className="product-wishlist">
+        <i className="far fa-heart"></i>
+      </div>
+    </div>
+    <div className="product-details">
+      <h3 className="product-title">Smart Watch</h3>
+      <div className="product-price">
+        <span className="product-current-price">$225.00</span>
+        <span className="product-original-price">$280.00</span>
+      </div>
+      <div className="product-rating">
+        <div className="product-stars">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+        </div>
+        <span className="product-reviews">(59)</span>
+      </div>
+    </div>
+  </Link>
 
-                        {/* <!-- Product 4 --> */}
-                        <div className="product-card">
-                            <div className="product-image-container">
-                                <img src="https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lock---go---M22311_PM2_Front%20view.png?wid=730&hei=730" alt="Product" className="product-image" />
-                                <div className="product-wishlist">
-                                    <i className="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div className="product-details">
-                                <h3 className="product-title">Designer Handbag</h3>
-                                <div className="product-price">
-                                    <span className="product-current-price">$180.00</span>
-                                    <span className="product-original-price">$220.00</span>
-                                </div>
-                                <div className="product-rating">
-                                    <div className="product-stars">
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star-half-alt"></i>
-                                        <i className="far fa-star"></i>
-                                    </div>
-                                    <span className="product-reviews">(28)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  {/* <!-- Product 4 --> */}
+  <Link to="/product/67f346eb26934098929c771f" className="product-card">
+    <div className="product-image-container">
+      <img src="https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lock---go---M22311_PM2_Front%20view.png?wid=730&hei=730" alt="Product" className="product-image" />
+      <div className="product-wishlist">
+        <i className="far fa-heart"></i>
+      </div>
+    </div>
+    <div className="product-details">
+      <h3 className="product-title">Designer Handbag</h3>
+      <div className="product-price">
+        <span className="product-current-price">$180.00</span>
+        <span className="product-original-price">$220.00</span>
+      </div>
+      <div className="product-rating">
+        <div className="product-stars">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star-half-alt"></i>
+          <i className="far fa-star"></i>
+        </div>
+        <span className="product-reviews">(28)</span>
+      </div>
+    </div>
+  </Link>
+</div>
                 </div>
             </section>
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { FaHeart, FaEye, FaStar } from "react-icons/fa"; // Importing icons
+import { FaHeart, FaEye, FaStar } from "react-icons/fa";
 import "./fashion.css";
 
-function FashionPage() {
+function Fashion() {
   const itemsPerPage = 40;
   const [currentPage, setCurrentPage] = useState(1);
   const [fashionProducts, setFashionProducts] = useState([]);
@@ -12,13 +12,12 @@ function FashionPage() {
   useEffect(() => {
     const fetchFashionProducts = async () => {
       try {
-        const response = await fetch("https://backend-onef.onrender.com/api/products");
+        const response = await fetch("https://backend-onef.onrender.com/api/products?category.name=Electronics");
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }
         const data = await response.json();
 
-        // Ensure filtering is case insensitive
         const filteredFashionProducts = data.filter(
           (product) => product.category?.toLowerCase() === "fashion"
         );
@@ -36,7 +35,7 @@ function FashionPage() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (fashionProducts.length === 0) return <p>No fashion products found.</p>;
+  if (fashionProducts.length === 0) return <p>No products available.</p>;
 
   const totalPages = Math.ceil(fashionProducts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -45,17 +44,15 @@ function FashionPage() {
 
   return (
     <div className="products-section-container">
-      {/* Header */}
       <div className="products-section-header">
         <div className="products-section-label">
           <span>Fashion Collection</span>
         </div>
       </div>
 
-      {/* Products Grid */}
       <div className="products-section-grid">
-        {currentProducts.map((product, index) => (
-          <div className="products-section-product" key={index}>
+        {currentProducts.map((product) => (
+          <div className="products-section-product" key={product._id}>
             <div className="products-section-product-img-container">
               <img
                 src={product.image}
@@ -77,52 +74,64 @@ function FashionPage() {
             </div>
             <div className="products-section-product-rating">
               <div className="products-section-stars">
-                {Array(5)
-                  .fill()
-                  .map((_, i) => (
-                    <FaStar
-                      key={i}
-                      className={
-                        i < product.rating
-                          ? "products-section-star-filled"
-                          : "products-section-star-empty"
-                      }
-                    />
-                  ))}
+                {Array.from({ length: 5 }, (_, i) => (
+                  <FaStar
+                    key={i}
+                    className={
+                      i + 1 <= Math.round(product.rating)
+                        ? "products-section-star-filled"
+                        : "products-section-star-empty"
+                    }
+                  />
+                ))}
               </div>
               <span className="products-section-review-count">
                 ({product.reviews})
               </span>
             </div>
+            <div className="products-section-buttons">
+              <button className="buy-btn">Buy</button>
+              <button className="add-to-cart-btn">Add to Cart</button>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Pagination Section */}
       <div className="pagination-container">
         <button
           className="pagination-btn"
-          onClick={() => setCurrentPage(currentPage - 1)}
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
         >
           &laquo; Prev
         </button>
 
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            key={i + 1}
-            className={`pagination-btn ${currentPage === i + 1 ? "active" : ""}`}
-            onClick={() => setCurrentPage(i + 1)}
-          >
-            {i + 1}
-          </button>
-        )).slice(0, 5)}
-
-        {totalPages > 5 && <span className="pagination-dots">...</span>}
+        {Array.from(
+          { length: totalPages },
+          (_, i) => i + 1
+        )
+          .filter((page) =>
+            totalPages > 5
+              ? page === 1 ||
+                page === totalPages ||
+                Math.abs(page - currentPage) <= 2
+              : true
+          )
+          .map((page, i, arr) => (
+            <React.Fragment key={page}>
+              {i > 0 && page - arr[i - 1] > 1 && <span className="pagination-dots">...</span>}
+              <button
+                className={`pagination-btn ${currentPage === page ? "active" : ""}`}
+                onClick={() => setCurrentPage(page)}
+              >
+                {page}
+              </button>
+            </React.Fragment>
+          ))}
 
         <button
           className="pagination-btn"
-          onClick={() => setCurrentPage(currentPage + 1)}
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
         >
           Next &raquo;
@@ -132,5 +141,4 @@ function FashionPage() {
   );
 }
 
-export default FashionPage;
-// 
+export default Fashion;
